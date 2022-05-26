@@ -5,7 +5,7 @@ import Part from './Part';
 
 const OurParts = () => {
 
-    const { data: parts, isLoading } = useQuery('parts', () => fetch('parts.json').then(res => res.json()))
+    const { data: parts, isLoading } = useQuery('parts', () => fetch('http://localhost:5000/product').then(res => res.json()))
 
     return (
         <div>

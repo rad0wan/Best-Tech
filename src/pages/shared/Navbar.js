@@ -14,6 +14,11 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/purchase'>Purchase</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
+        {
+            user && <>
+                <li><Link to='/dashBoard'>DashBoard</Link></li>
+            </>
+        }
     </>
 
     return (
@@ -37,7 +42,13 @@ const Navbar = () => {
                 </div>
                 <div class="navbar-end">
                     {
-                        user && <span className='text-primary font-bold text-sm mr-1'>{user.displayName}</span>
+                        user && <>
+                            <span className='text-primary font-bold text-sm mr-1 lg:block hidden'>{user.displayName}</span>
+                            <label for="dashboard-slider" tabindex="1" class="btn btn-ghost lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            </label>
+                        </>
+
                     }
                     {
                         user ?
