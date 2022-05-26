@@ -1,0 +1,65 @@
+[
+    {
+        "_id": "628b02375845a9e0200c5475",
+        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
+        "name": "Intel® Z490 (LGA 1200) ATX",
+        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
+        "minOrderQuantity": 50,
+        "availableQuantity": 500,
+        "price": 99
+    },
+    {
+        "_id": "628b0237a146ad770e19159d",
+        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
+        "name": "Intel® Z490 (LGA 1200) ATX",
+        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
+        "minOrderQuantity": 50,
+        "availableQuantity": 500,
+        "price": 99
+    },
+    {
+        "_id": "628b0237d582eba29b8c919f",
+        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
+        "name": "Intel® Z490 (LGA 1200) ATX",
+        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
+        "minOrderQuantity": 50,
+        "availableQuantity": 500,
+        "price": 99
+    },
+    {
+        "_id": "628b02370d8759f4a2a493ff",
+        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
+        "name": "Intel® Z490 (LGA 1200) ATX",
+        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
+        "minOrderQuantity": 50,
+        "availableQuantity": 500,
+        "price": 99
+    },
+    {
+        "_id": "628b0237ebae344587a8c757",
+        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
+        "name": "Intel® Z490 (LGA 1200) ATX",
+        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
+        "minOrderQuantity": 50,
+        "availableQuantity": 500,
+        "price": 99
+    },
+    {
+        "_id": "628b023715d5631b24fd65a5",
+        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
+        "name": "Intel® Z490 (LGA 1200) ATX",
+        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
+        "minOrderQuantity": 50,
+        "availableQuantity": 500,
+        "price": 99
+    },
+    {
+        "_id": "628b0237dbec767f2ea2a889",
+        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
+        "name": "Intel® Z490 (LGA 1200) ATX",
+        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
+        "minOrderQuantity": 50,
+        "availableQuantity": 500,
+        "price": 99
+    }
+]
