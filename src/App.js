@@ -15,6 +15,7 @@ import MyOrders from './pages/DashBoard/MyOrders';
 import MyProfile from './pages/DashBoard/MyProfile';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/myPortfolio" element={<MyPortfolio />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />

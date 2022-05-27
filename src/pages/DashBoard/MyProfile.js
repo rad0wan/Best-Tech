@@ -2,8 +2,10 @@ import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loading from '../shared/Loading';
 
 const MyProfile = () => {
 
@@ -19,15 +21,24 @@ const MyProfile = () => {
             location: data.location,
             phoneNumber: data.phoneNumber
         }
-        // axios.post('http://localhost:5000/review', info)
-        //     .then(res => {
-        //         console.log(res.data);
-        //         toast("Successfully review added")
-        //         reset()
-        //     })
+        console.log(info);
+        console.log(data.linkedIn);
+        console.log(data)
+        axios.put(`http://localhost:5000/user/${user.email}`, info)
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+                toast("Successfully your profile updated")
+                reset()
+            })
     };
 
-
+    const { data: profile, isLoading } = useQuery('profile', () => fetch(`http://localhost:5000/user/${user.email}`).then(res => res.json()))
+    console.log(profile);
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+    const { phoneNumber, location, linkedIn, education } = profile
     return (
         <div className='mt-5 ml-5 grid grid-cols-1 lg:grid-cols-2'>
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -36,11 +47,11 @@ const MyProfile = () => {
                 </figure>
                 <div class="card-body ">
                     <h2 class="card-title">Name: {user?.displayName}</h2>
-                    <p>Email: {user.email}</p>
-                    <p>Education: </p>
-                    <p>location: </p>
-                    <p>phone number: </p>
-                    <p>linked In Link: </p>
+                    <p className='text-slate-800 font-bold'>Email: <span className='text-cyan-600 font-semibold'>{user.email}</span></p>
+                    <p className='text-slate-800 font-bold'>Education: <span className='text-cyan-600 font-semibold'>{education}</span></p>
+                    <p className='text-slate-800 font-bold'>location: <span className='text-cyan-600 font-semibold'>{location}</span></p>
+                    <p className='text-slate-800 font-bold'>phone number: <span className='text-cyan-600 font-semibold'>{phoneNumber}</span></p>
+                    <p className='text-slate-800 font-bold'>linked In Link: <span className='text-cyan-600 font-semibold'>{linkedIn}</span></p>
                 </div>
             </div>
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -80,7 +91,7 @@ const MyProfile = () => {
                                 type="text"
                                 placeholder="Your location "
                                 class="input input-bordered input-success w-full max-w-xs"
-                                {...register("location ", {
+                                {...register("location", {
                                     required: {
                                         value: true,
                                         message: 'location  is required'
@@ -105,7 +116,7 @@ const MyProfile = () => {
                                 type="text"
                                 placeholder="Your phone number "
                                 class="input input-bordered input-success w-full max-w-xs"
-                                {...register("phoneNumber ", {
+                                {...register("phoneNumber", {
                                     required: {
                                         value: true,
                                         message: 'phone number  is required'
@@ -130,7 +141,7 @@ const MyProfile = () => {
                                 type="text"
                                 placeholder="Your Linked In Link "
                                 class="input input-bordered input-success w-full max-w-xs"
-                                {...register("linkedIn ", {
+                                {...register("linkedIn", {
                                     required: {
                                         value: true,
                                         message: 'Linked In  is required'
