@@ -3,12 +3,14 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../hooks/useToken';
 import Loading from '../shared/Loading';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [token] = useToken(user || gUser)
     let location = useLocation();
     let navigate = useNavigate();
     let errorMassage;
@@ -88,6 +90,7 @@ const Login = () => {
                             </label>
                         </div>
                         <input className='btn btn-accent w-full max-w-xs' type="submit" value={'Login'} />
+                        {errorMassage}
                         <p className='text-xs pt-2'>New to Best Tech?<span className='text-yellow-700 cursor-pointer'><Link to={'/signUp'}> Create new account</Link></span></p>
                         <div class="divider">OR</div>
                     </form>
