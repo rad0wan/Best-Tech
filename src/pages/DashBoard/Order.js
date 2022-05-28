@@ -3,24 +3,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const Order = ({ order }) => {
+const Order = ({ order, refetch }) => {
 
-    const { _id, email, quantity, product, price, productId, customerName, img, refetch, setDeletingOrder } = order;
+    const { _id, email, quantity, product, price, productId, customerName, img } = order;
 
     const totalPrice = parseInt(quantity) * parseInt(price);
 
-    // const handleDelete = () => {
-    //     axios.delete(`http://localhost:5000/order/${_id}`)
-    //         .then(res => {
-    //             console.log(res)
-    //             toast('Successfully deleted')
-    //             refetch()
-    //         })
-
-    // }
-
-    const handlePayment = () => {
-
+    const handleDelete = () => {
+        axios.delete(`http://localhost:5000/order/${_id}`)
+            .then(res => {
+                console.log(res)
+                toast('Successfully deleted')
+                refetch()
+            })
     }
 
     return (
@@ -44,7 +39,7 @@ const Order = ({ order }) => {
             <td>{totalPrice}$</td>
             <th>
                 {price && !order.paid && <> <Link to={`/dashboard/payment/${_id}`}><button class="btn btn-success btn-xs mr-2">Pay</button></Link>
-                    <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" class="btn btn-error btn-xs">Delete</label> </>}
+                    <label for="my-modal-5" class="btn btn-error text-white btn-xs">Delete</label> </>}
                 {
                     price && order.paid && <div>
                         <p class="text-success font-bold">Paid</p>
@@ -52,6 +47,18 @@ const Order = ({ order }) => {
                     </div>
                 }
             </th>
+            {/* <!-- Put this part before </body> tag-- > */}
+            <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+            <div class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                    <label for="my-modal-5" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 class="font-bold text-lg">Are you sure you want delete {product}!!</h3>
+                    <div class="modal-action">
+                        <label onClick={handleDelete} for="my-modal-5" class="btn btn-error">Delete</label>
+                        <label for="my-modal-5" class="btn">cancel</label>
+                    </div>
+                </div>
+            </div>
         </tr>
     );
 };

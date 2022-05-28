@@ -17,10 +17,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 import Payment from './pages/DashBoard/Payment';
+import AllUsers from './pages/Home/AllUsers';
+import ManageOrders from './pages/DashBoard/ManageOrders';
+import AddAProduct from './pages/DashBoard/AddAProduct';
 
 function App() {
   return (
-    <div className='lg:max-w-7xl mx-auto lg:px-12' >
+    <div className='lg:max-w-7xl mx-auto lg:px-12 px-3' >
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -38,6 +41,9 @@ function App() {
           <Route path='addAReviews' element={<AddAReviews />}></Route>
           <Route path='myProfile' element={<MyProfile />}></Route>
           <Route path='payment/:id' element={<Payment />}></Route>
+          <Route path='users' element={<AllUsers />}></Route>
+          <Route path='orders' element={<ManageOrders />}></Route>
+          <Route path='AddAProduct' element={<AddAProduct />}></Route>
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />

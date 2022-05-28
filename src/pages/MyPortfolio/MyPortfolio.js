@@ -12,9 +12,11 @@ const MyPortfolio = () => {
                     <p>Email: radowan.me@gmail.com</p>
                     <p>Education: Honor's first year in political science</p>
                     <p className=''>web development Skills: <span>Html,css,JavaScript,Bootstrap,Tailwind,daisyUi, <br /> React,Node,Mongodb,Express</span></p>
-                    <div class="card-actions">
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
+                    <p>Some websites:</p>
+                    <a className='text-green-600' href="https://discover-the-world-dae31.web.app/">Discover the World</a>
+                    <a className='text-green-600' href=""></a>
+                    <a className='text-green-600' href="https://spice-house0.web.app/">Spice House</a>
+
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 [
     {
-        "_id": "628b02375845a9e0200c5475",
         "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
         "name": "Intel® Z490 (LGA 1200) ATX",
         "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
@@ -9,57 +8,43 @@
         "price": 99
     },
     {
-        "_id": "628b0237a146ad770e19159d",
-        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
-        "name": "Intel® Z490 (LGA 1200) ATX",
-        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
-        "minOrderQuantity": 50,
-        "availableQuantity": 500,
-        "price": 99
+        "img": "https://www.intel.com/content/dam/www/public/us/en/images/product/core-i9-processors-framed-badge-rwd.jpg.rendition.intel.web.480.270.jpg",
+        "name": "Intel® Core™ i9 Processors",
+        "details": "These processors feature an innovative architecture designed for intelligent performance (AI), immersive display and graphics.",
+        "minOrderQuantity": 20,
+        "availableQuantity": 400,
+        "price": 199
     },
     {
-        "_id": "628b0237d582eba29b8c919f",
-        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
-        "name": "Intel® Z490 (LGA 1200) ATX",
-        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
-        "minOrderQuantity": 50,
-        "availableQuantity": 500,
-        "price": 99
+        "img": "https://www.asus.com/media/global/products/pJOKxTNGAGts4Qp0/P_setting_xxx_0_90_end_500.png",
+        "name": "AX6000 Dual Band WiFi 6",
+        "details": "Gaming Router supporting MU-MIMO and OFDMA technology, with AiProtection Pro network security powered by Trend Micro™, built-in wtfast® game accelerator and Adaptive QoS",
+        "minOrderQuantity": 25,
+        "availableQuantity": 450,
+        "price": 25
     },
     {
-        "_id": "628b02370d8759f4a2a493ff",
-        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
-        "name": "Intel® Z490 (LGA 1200) ATX",
-        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
-        "minOrderQuantity": 50,
-        "availableQuantity": 500,
-        "price": 99
+        "img": "https://dlcdnwebimgs.asus.com/gain/7E93F55B-9C0F-4177-A059-C6DC72EB19BD/w717/h525",
+        "name": "ROG Claymore",
+        "details": "World’s first RGB mechanical gaming keyboard with a detachable numpad, Aura Sync and Cherry MX RGB switches",
+        "minOrderQuantity": 27,
+        "availableQuantity": 440,
+        "price": 39
     },
     {
-        "_id": "628b0237ebae344587a8c757",
-        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
-        "name": "Intel® Z490 (LGA 1200) ATX",
-        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
-        "minOrderQuantity": 50,
-        "availableQuantity": 500,
-        "price": 99
+        "img": "https://www.asus.com/media/Odin/Websites/global/Series/96/P_setting_xxx_0_90_end_185.png?webp",
+        "name": "TUF Gaming",
+        "details": "TUF Gaming cases feature layouts and fan mounts that optimize airflow, and they also offer generous cable-routing space",
+        "minOrderQuantity": 40,
+        "availableQuantity": 520,
+        "price": 29
     },
     {
-        "_id": "628b023715d5631b24fd65a5",
-        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
-        "name": "Intel® Z490 (LGA 1200) ATX",
-        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
-        "minOrderQuantity": 50,
-        "availableQuantity": 500,
-        "price": 99
-    },
-    {
-        "_id": "628b0237dbec767f2ea2a889",
-        "img": "https://www.asus.com/media/global/products/rrlkpegpwheufjes/P_setting_xxx_0_90_end_500.png",
-        "name": "Intel® Z490 (LGA 1200) ATX",
-        "details": "ASUS Prime series is expertly engineered to unleash the full potential of 10th Gen Intel® Core™ processors",
-        "minOrderQuantity": 50,
-        "availableQuantity": 500,
-        "price": 99
+        "img": "https://www.asus.com/media/global/products/LEYFryz3Y5KR5JX9/P_setting_xxx_0_90_end_500.png",
+        "name": "Dual GeForce® GTX 1650 4GB GDDR5",
+        "details": "The ASUS Dual GeForce® GTX 1650 is built with the breakthrough graphics performance of the award-winning NVIDIA Turing™",
+        "minOrderQuantity": 15,
+        "availableQuantity": 300,
+        "price": 159
     }
 ]
