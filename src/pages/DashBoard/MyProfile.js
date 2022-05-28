@@ -24,7 +24,7 @@ const MyProfile = () => {
         console.log(info);
         console.log(data.linkedIn);
         console.log(data)
-        axios.put(`http://localhost:5000/user/${user.email}`, info)
+        axios.put(`https://shielded-fjord-09998.herokuapp.com/user/${user.email}`, info)
             .then(res => {
                 console.log(res);
                 console.log(res.data);
@@ -33,7 +33,7 @@ const MyProfile = () => {
             })
     };
 
-    const { data: profile, isLoading } = useQuery('profile', () => fetch(`http://localhost:5000/user/${user.email}`).then(res => res.json()))
+    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://shielded-fjord-09998.herokuapp.com/user/${user.email}`).then(res => res.json()))
     console.log(profile);
     if (isLoading) {
         return <Loading></Loading>

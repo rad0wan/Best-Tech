@@ -5,7 +5,7 @@ import Part from './Part';
 
 const OurParts = () => {
 
-    const { data: parts, isLoading } = useQuery('parts', () => fetch('http://localhost:5000/product', {
+    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://shielded-fjord-09998.herokuapp.com/product', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

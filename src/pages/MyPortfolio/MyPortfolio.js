@@ -14,9 +14,8 @@ const MyPortfolio = () => {
                     <p className=''>web development Skills: <span>Html,css,JavaScript,Bootstrap,Tailwind,daisyUi, <br /> React,Node,Mongodb,Express</span></p>
                     <p>Some websites:</p>
                     <a className='text-green-600' href="https://discover-the-world-dae31.web.app/">Discover the World</a>
-                    <a className='text-green-600' href=""></a>
+                    <a className='text-green-600' href="https://best-tech0.web.app/"> Best Tech</a>
                     <a className='text-green-600' href="https://spice-house0.web.app/">Spice House</a>
-
                 </div>
             </div>
         </div>

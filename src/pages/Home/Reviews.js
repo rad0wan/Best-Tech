@@ -4,7 +4,7 @@ import Review from './Review';
 
 const Reviews = () => {
 
-    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('http://localhost:5000/review').then(res => res.json()))
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://shielded-fjord-09998.herokuapp.com/review').then(res => res.json()))
 
 
 

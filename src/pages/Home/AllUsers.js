@@ -6,7 +6,7 @@ import UserRow from './UserRow';
 const AllUsers = () => {
     const [users, setUsers] = useState([])
     const { data, isLoading, refetch } = useQuery('users', () =>
-        fetch('http://localhost:5000/user').then(res => res.json())
+        fetch('https://shielded-fjord-09998.herokuapp.com/user').then(res => res.json())
     )
     useEffect(() => {
         setUsers(data)

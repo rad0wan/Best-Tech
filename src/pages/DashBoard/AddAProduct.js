@@ -34,7 +34,7 @@ const AddAProduct = () => {
                         img: img
                     }
                     // send to  database
-                    axios.post('http://localhost:5000/product', product, {
+                    axios.post('https://shielded-fjord-09998.herokuapp.com/product', product, {
                         headers: {
                             authorization: `Bearer ${localStorage.getItem('accessToken')}`
                         }

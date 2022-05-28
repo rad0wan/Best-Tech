@@ -6,7 +6,7 @@ const DeleteConfirmModal = ({ deletingOrder, refetch, setDeletingOrder }) => {
     const { _id, product } = deletingOrder;
 
     const handleDelete = () => {
-        axios.delete(`http://localhost:5000/order/${_id}`, {
+        axios.delete(`https://shielded-fjord-09998.herokuapp.com/order/${_id}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }

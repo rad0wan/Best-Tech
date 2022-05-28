@@ -6,7 +6,7 @@ import OrderRow from './OrderRow';
 const ManageOrders = () => {
     const [orders, setOrder] = useState([])
     const { data, isLoading, refetch } = useQuery('Order', () =>
-        fetch('http://localhost:5000/order').then(res => res.json())
+        fetch('https://shielded-fjord-09998.herokuapp.com/order').then(res => res.json())
     )
     useEffect(() => {
         setOrder(data)

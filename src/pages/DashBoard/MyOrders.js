@@ -9,7 +9,7 @@ import Order from './Order';
 const MyOrders = () => {
     const [user, loading, error] = useAuthState(auth);
     const [deletingOrder, setDeletingOrder] = useState(null)
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/order/${user.email}`).then(res => res.json()))
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://shielded-fjord-09998.herokuapp.com/order/${user.email}`).then(res => res.json()))
 
     if (isLoading) {
         return <Loading />

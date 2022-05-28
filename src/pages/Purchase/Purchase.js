@@ -17,7 +17,7 @@ const Purchase = () => {
     const navigate = useNavigate()
 
     const id = useParams()
-    const { data: product, isLoading, refetch } = useQuery('product', () => fetch(`http://localhost:5000/product/${id.id}`).then(res => res.json()))
+    const { data: product, isLoading, refetch } = useQuery('product', () => fetch(`https://shielded-fjord-09998.herokuapp.com/product/${id.id}`).then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
@@ -53,7 +53,7 @@ const Purchase = () => {
             img: img
         }
 
-        axios.post('http://localhost:5000/order', info)
+        axios.post('https://shielded-fjord-09998.herokuapp.com/order', info)
             .then(res => {
                 console.log(res.data);
                 toast("Successfully your order added")

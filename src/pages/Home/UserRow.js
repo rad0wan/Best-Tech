@@ -7,7 +7,7 @@ const UserRow = ({ user, index, refetch }) => {
     const [deletingOrder, setDeletingOrder] = useState('a')
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${user.email}`, {
+        fetch(`https://shielded-fjord-09998.herokuapp.com/user/admin/${user.email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -28,7 +28,7 @@ const UserRow = ({ user, index, refetch }) => {
     }
     console.log(user);
     const handleDelete = () => {
-        axios.delete(`http://localhost:5000/user/${user._id}`)
+        axios.delete(`https://shielded-fjord-09998.herokuapp.com/user/${user._id}`)
             .then(res => {
                 console.log(res)
                 toast('Successfully deleted')

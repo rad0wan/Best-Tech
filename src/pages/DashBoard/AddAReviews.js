@@ -17,7 +17,7 @@ const AddAReviews = () => {
             rating: data.rating,
             img: user?.photoURL || ''
         }
-        axios.post('http://localhost:5000/review', info)
+        axios.post('https://shielded-fjord-09998.herokuapp.com/review', info)
             .then(res => {
                 console.log(res.data);
                 toast("Successfully review added")

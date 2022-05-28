@@ -10,7 +10,7 @@ const Order = ({ order, refetch }) => {
     const totalPrice = parseInt(quantity) * parseInt(price);
 
     const handleDelete = () => {
-        axios.delete(`http://localhost:5000/order/${_id}`)
+        axios.delete(`https://shielded-fjord-09998.herokuapp.com/order/${_id}`)
             .then(res => {
                 console.log(res)
                 toast('Successfully deleted')
