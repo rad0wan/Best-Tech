@@ -20,7 +20,7 @@ const Login = () => {
         return <Loading></Loading>
     }
     if (error || gError) {
-        errorMassage = <p className='text-red-700 text-sm font-bold'>{error.message || gError.message}</p>
+        errorMassage = <p className='text-red-700 text-sm font-bold'>{error?.message || gError?.message}</p>
     }
     if (user || gUser) {
         navigate(from, { replace: true });

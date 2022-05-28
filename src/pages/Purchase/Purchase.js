@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../shared/Loading';
@@ -14,6 +14,7 @@ const Purchase = () => {
     const [user, loading, error] = useAuthState(auth);
     const [errorMsg, setErrorMsg] = useState('')
     const [quantity, setQuantity] = useState(0)
+    const navigate = useNavigate()
 
     const id = useParams()
     const { data: product, isLoading, refetch } = useQuery('product', () => fetch(`http://localhost:5000/product/${id.id}`).then(res => res.json()))
@@ -48,13 +49,15 @@ const Purchase = () => {
             product: name,
             price: price,
             productId: _id,
-            customerName: user.displayName
+            customerName: user.displayName,
+            img: img
         }
 
         axios.post('http://localhost:5000/order', info)
             .then(res => {
                 console.log(res.data);
                 toast("Successfully your order added")
+                navigate('/dashBoard')
             })
     }
     return (
