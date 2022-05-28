@@ -15,7 +15,7 @@ const DeleteConfirmModal = ({ deletingOrder, refetch, setDeletingOrder }) => {
                 console.log(res.data);
                 if (res.data.deletedCount > 0) {
                     refetch()
-                    toast.success('Successfully delete')
+                    toast.success('Successfully deleted')
                     setDeletingOrder(null)
                 }
             })

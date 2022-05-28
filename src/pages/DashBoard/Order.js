@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Order = ({ order }) => {
@@ -17,6 +18,10 @@ const Order = ({ order }) => {
     //         })
 
     // }
+
+    const handlePayment = () => {
+
+    }
 
     return (
         <tr>
@@ -38,8 +43,14 @@ const Order = ({ order }) => {
             <td>{price}$/pice</td>
             <td>{totalPrice}$</td>
             <th>
-                <button class="btn btn-success btn-xs mr-2">Pay</button>
-                <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" class="btn btn-error btn-xs">Delete</label>
+                {price && !order.paid && <> <Link to={`/dashboard/payment/${_id}`}><button class="btn btn-success btn-xs mr-2">Pay</button></Link>
+                    <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" class="btn btn-error btn-xs">Delete</label> </>}
+                {
+                    price && order.paid && <div>
+                        <p class="text-success font-bold">Paid</p>
+                        <p class="text-lime-600 font-bold ">Transition Id: <br /> {order.transitionId}</p>
+                    </div>
+                }
             </th>
         </tr>
     );

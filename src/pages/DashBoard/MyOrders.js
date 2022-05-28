@@ -15,7 +15,8 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h1>My Orders</h1>
+            <h1 className='text-2xl'>My Orders: {orders?.length}</h1>
+
             <div class="overflow-x-auto w-full">
                 <table class="table w-full">
                     {/* <!-- head --> */}
@@ -51,15 +52,15 @@ const MyOrders = () => {
                     </tfoot>
 
                 </table>
-                <div>
-                    {
-                        deletingOrder && <DeleteConfirmModal
-                            deletingOrder={deletingOrder}
-                            setDeletingOrder={setDeletingOrder}
-                            refetch={refetch}
-                        ></DeleteConfirmModal>
-                    }
-                </div>
+            </div>
+            <div>
+                {
+                    deletingOrder && <DeleteConfirmModal
+                        deletingOrder={deletingOrder}
+                        setDeletingOrder={setDeletingOrder}
+                        refetch={refetch}
+                    ></DeleteConfirmModal>
+                }
             </div>
         </div>
     );
