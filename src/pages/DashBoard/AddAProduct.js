@@ -16,12 +16,13 @@ const AddAProduct = () => {
         const formData = new FormData();
         formData.append('image', image);
         const url = `https://api.imgbb.com/1/upload?key=${ApiKey}`
-        fetch(url, {
+        console.log(ApiKey);
+        fetch(`https://api.imgbb.com/1/upload?key=${ApiKey}`, {
             method: 'POST',
             body: formData,
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
+            // headers: {
+            //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            // }
 
         })
             .then(res => res.json())
@@ -57,6 +58,7 @@ const AddAProduct = () => {
             })
 
     };
+
 
     return (
         <div className=''>
