@@ -18,7 +18,11 @@ const AddAProduct = () => {
         const url = `https://api.imgbb.com/1/upload?key=${ApiKey}`
         fetch(url, {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+
         })
             .then(res => res.json())
             .then(result => {
@@ -26,10 +30,10 @@ const AddAProduct = () => {
                 const img = result.data.url;
                 if (result.success) {
                     const product = {
-                        product: data.name,
-                        details: data.Description,
+                        name: data.name,
+                        details: data.description,
                         price: data.price,
-                        maxOrderQuantity: data.maxOrderQuantity,
+                        availableQuantity: data.maxOrderQuantity,
                         minOrderQuantity: data.minOrderQuantity,
                         img: img
                     }

@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, email, customerName } = order
     // _id, email, quantity, product, price, productId, customerName,
     useEffect(() => {
-        axios.post('https://shielded-fjord-09998.herokuapp.com/create-payment-intent', { price: price }).then(res => {
+        axios.post('http://localhost:5000/create-payment-intent', { price: price }).then(res => {
             console.log(res.data);
             const dataClientSecret = res?.data?.clientSecret;
             if (dataClientSecret) {
@@ -75,7 +75,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transitionId: paymentIntent.id
             }
-            axios.patch(`https://shielded-fjord-09998.herokuapp.com/order/${_id}`, payment)
+            axios.patch(`http://localhost:5000/order/${_id}`, payment)
                 .then(res => {
                     setProcessing(false)
                     console.log(res.data);

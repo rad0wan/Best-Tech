@@ -30,10 +30,11 @@ const MyProfile = () => {
                 console.log(res.data);
                 toast("Successfully your profile updated")
                 reset()
+                refetch()
             })
     };
 
-    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://shielded-fjord-09998.herokuapp.com/user/${user.email}`).then(res => res.json()))
+    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`https://shielded-fjord-09998.herokuapp.com/user/${user.email}`).then(res => res.json()))
     console.log(profile);
     if (isLoading) {
         return <Loading></Loading>
@@ -158,6 +159,7 @@ const MyProfile = () => {
                             </label>
                         </div>
                         <input class="btn btn-success w-full max-w-xs" type="submit" value={'Update Now'} />
+                        {/* {refetch()} */}
                     </form>
                 </div>
             </div>

@@ -22,9 +22,9 @@ const Login = () => {
     if (error || gError) {
         errorMassage = <p className='text-red-700 text-sm font-bold'>{error?.message || gError?.message}</p>
     }
-    if (user || gUser) {
+    if (token) {
         navigate(from, { replace: true });
-        console.log(user, gUser);
+        console.log(user, gUser, token);
     }
 
     const onSubmit = data => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../shared/Loading';
@@ -12,6 +12,7 @@ const SignUp = () => {
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const navigate = useNavigate()
     const [token] = useToken(user || gUser)
     let errorMassage;
 
@@ -20,6 +21,10 @@ const SignUp = () => {
     }
     if (error || uError || gError) {
         errorMassage = <p className='text-red-700 text-sm font-bold'>{error.message || uError.message || gError.message}</p>
+    }
+
+    if (user || gUser) {
+        navigate('/')
     }
 
     const onSubmit = async (data) => {
@@ -101,7 +106,7 @@ const SignUp = () => {
                                             message: 'Password is required'
                                         },
                                         pattern: {
-                                            value: /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}$/,
+                                            value: 6,
                                             message: 'Provide Valid password'
                                         }
                                     })}

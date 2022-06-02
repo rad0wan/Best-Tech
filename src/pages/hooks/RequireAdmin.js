@@ -2,8 +2,9 @@ import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
 import auth from '../../firebase.init';
-import Loading from './Loading';
+import Loading from '../shared/Loading';
 import useAdmin from './useAdmin';
+
 
 const RequireAdmin = ({ children }) => {
 

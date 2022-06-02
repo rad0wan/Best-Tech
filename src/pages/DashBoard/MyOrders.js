@@ -1,3 +1,4 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
@@ -9,7 +10,19 @@ import Order from './Order';
 const MyOrders = () => {
     const [user, loading, error] = useAuthState(auth);
     const [deletingOrder, setDeletingOrder] = useState(null)
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://shielded-fjord-09998.herokuapp.com/order/${user.email}`).then(res => res.json()))
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://shielded-fjord-09998.herokuapp.com/order/${user.email}`, {
+        // method: 'GET',
+        // headers: {
+        //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        // }
+    }).then(res => {
+        // console.log(res);
+        // if (res.status === 401 || res.status === 403) {
+        //     signOut(auth)
+        //     localStorage.removeItem('accessToken')
+        // }
+        return res.json()
+    }))
 
     if (isLoading) {
         return <Loading />

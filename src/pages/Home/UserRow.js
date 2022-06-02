@@ -2,20 +2,18 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const UserRow = ({ user, index, refetch }) => {
-
-    const [deletingOrder, setDeletingOrder] = useState('a')
+const UserRow = ({ user, index, refetch, setUserId }) => {
 
     const makeAdmin = () => {
         fetch(`https://shielded-fjord-09998.herokuapp.com/user/admin/${user.email}`, {
             method: 'PUT',
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
+            // headers: {
+            //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            // }
         }).then(res => {
-            if (res.status === 403) {
-                toast.error('failed to make admin')
-            }
+            // if (res.status === 403) {
+            //     toast.error('failed to make admin')
+            // }
             return res.json()
         })
             .then(data => {
@@ -26,17 +24,23 @@ const UserRow = ({ user, index, refetch }) => {
                 }
             })
     }
-    console.log(user);
-    const handleDelete = () => {
-        axios.delete(`https://shielded-fjord-09998.herokuapp.com/user/${user._id}`)
-            .then(res => {
-                console.log(res)
-                toast('Successfully deleted')
-                setDeletingOrder(null)
-                refetch()
-            })
 
+
+    const handleId = id => {
+        setUserId(id)
+        console.log(id);
     }
+
+
+    // const handleDelete = () => {
+    //     axios.delete(`https://shielded-fjord-09998.herokuapp.com/user/${user._id}`)
+    //         .then(res => {
+    //             console.log(res)
+    //             toast('Successfully deleted')
+    //             refetch()
+    //         })
+
+    // }
 
     return (
         <tr>
@@ -47,19 +51,19 @@ const UserRow = ({ user, index, refetch }) => {
                 <span className='text-primary font-bold'>Already Admin</span>}</td>
             {/* <td><button onClick={handleDelete} class="btn btn-error text-white btn-sm"></button></td> */}
             {/* <!-- The button to open modal --> */}
-            <td><label for="my-modal-6" class="btn btn-error text-white btn-sm">Remove Admin</label></td>
+            <td><label onClick={() => handleId(user)} for="my-modal-6" class="btn btn-error text-white btn-sm">Remove User </label></td>
             {/* <!-- Put this part before </body> tag-- > */}
-            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+            {/* <input type="checkbox" id="my-modal-6" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
                     <label for="my-modal-6" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 class="font-bold text-lg">Are you sure you want delete {user.email}!!</h3>
                     <div class="modal-action">
                         <label onClick={handleDelete} for="my-modal-6" class="btn btn-error">Delete</label>
-                        <label for="my-modal-6" class="btn">cancel</label>
+                        <label for="my-modal-6" class="btn">cancel { }</label>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </tr >
     );
 };
