@@ -2,7 +2,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-const CheckoutForm = ({ order }) => {
+const CheckoutForm = ({ order, totalPrice }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('')
@@ -13,14 +13,26 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, email, customerName } = order
     // _id, email, quantity, product, price, productId, customerName,
     useEffect(() => {
-        axios.post('http://localhost:5000/create-payment-intent', { price: price }).then(res => {
-            console.log(res.data);
-            const dataClientSecret = res?.data?.clientSecret;
-            if (dataClientSecret) {
-                setClientSecret(dataClientSecret)
-            }
+        // axios.post('http://localhost:5000/create-payment-intent', { price: price }).then(res => {
+        //     console.log(res.data);
+        // })
+        console.log(typeof (totalPrice));
+        fetch('http://localhost:5000/create-payment-intent', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ price: parseInt(totalPrice) }),
         })
-    }, [price])
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                const dataClientSecret = data?.clientSecret;
+                if (dataClientSecret) {
+                    setClientSecret(dataClientSecret)
+                }
+            })
+    }, [totalPrice])
 
     const handleSubmit = async (event) => {
         event.preventDefault()
